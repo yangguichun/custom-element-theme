@@ -33,18 +33,40 @@ npm install
   - gulp
 - 重复以上步骤，生成多套主题，比如`.day-theme`, `.night-theme` 两套
 
+```shell
+et -i
+node update-element-theme-variable.js
+et
+gulp
+```
+
 ### 在项目中使用多套主题
-- 假设在[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)中使用
-- 将多套主题拷贝到 /src/assets 目录下，多套主题则分多个子目录存放
+假设在[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)中使用
+- 将生成在dist目录下的多套主题拷贝到 /src/assets 目录下，多套主题则分多个子目录存放，比如`day-theme`, `night-theme`
 - 然后通过`toggleClass(document.body, 'day-theme')`来切换主题，具体参考[这里](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/views/theme/index.vue#L97)
 
 
 ## 如果element-theme-chalk有版本更新，通过如下方式更新主题
-- remove `element-variables.scss`
-- update `element-theme-chalk` version in package.json
-- et -i
-- et
-- gulp
+### 查看是否有更新
+- 查看本地的element-theme-chalk版本
+  - npm list element-theme-chalk
+- 查看所有可用的版本
+  - npm view element-theme-chalk versions
+### 更新到最新版本
+通过如下shell命令
+```shell
+del element-variables.scss
+npm i element-theme-chalk@latest
+et -i
+node update-element-theme-variable.js
+et
+gulp
+```
 
+
+## TODO
+- 增加编译的shell
+- 增加更新的shell
+- 在gulpfile.js中，增加备份config.json文件到dist目录的功能，因为config.json需要备份，以便以后修改可以修改主题
 ## License
 MIT
