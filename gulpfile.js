@@ -2,6 +2,8 @@ var path = require('path')
 var gulp = require('gulp')
 var cleanCSS = require('gulp-clean-css');
 var cssWrap = require('gulp-css-wrap');
+var fs = require('fs');
+
 
 var customThemeName='.custom-theme'
 
@@ -17,3 +19,7 @@ gulp.task('move-font', function() {
 });
 
 gulp.task('default',['css-wrap','move-font']);
+let configFilePath = './confg.json'
+if(fs.existsSync(configFilePath)){
+  fs.copyFileSync(configFilePath, './dist/config.json')
+}
