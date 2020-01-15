@@ -2,8 +2,6 @@ var path = require('path')
 var gulp = require('gulp')
 var cleanCSS = require('gulp-clean-css');
 var cssWrap = require('gulp-css-wrap');
-var fs = require('fs');
-
 
 var customThemeName='.custom-theme'
 
@@ -18,8 +16,8 @@ gulp.task('move-font', function() {
   return gulp.src(['./theme/fonts/**']).pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('default',['css-wrap','move-font']);
-let configFilePath = './confg.json'
-if(fs.existsSync(configFilePath)){
-  fs.copyFileSync(configFilePath, './dist/config.json')
-}
+gulp.task('copy', function() {
+  gulp.src('./config.json').pipe(gulp.dest('dist/'));
+});
+
+gulp.task('default',['css-wrap','move-font', 'copy']);
