@@ -66,6 +66,6 @@ gulp
 ## TODO
 - 增加编译的shell
 - 增加更新的shell
-- 在gulpfile.js中，增加备份config.json文件到dist目录的功能，因为config.json需要备份，以便以后修改可以修改主题
+- ~在gulpfile.js中，增加备份config.json文件到dist目录的功能，因为config.json需要备份，以便以后修改可以修改主题~
 ## License
 MIT
