@@ -47,6 +47,7 @@
     "gulp-cssmin": "^0.1.7",
     "gulp-nop": "0.0.3",
     "gulp-sass": "^3.1.0",
+    "minimist": "^1.2.0",
     "ora": "^0.3.0",
     "run-sequence": "^1.2.2"
   },
