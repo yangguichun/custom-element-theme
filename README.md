@@ -29,15 +29,15 @@ npm install
   - **node update-element-theme-variable.js**
 - build theme，生成的文件在theme目录下
   - et
-- 主要是给css添加一个名字空间，默认是`custom-theme`，可以通过[这个变量](https://github.com/yangguichun/custom-element-theme/blob/master/gulpfile.js#L6)修改，生成的文件在dist目录下
-  - gulp
+- 主要是给css添加一个名字空间，默认是`custom-theme`，可以通过[这个变量](https://github.com/yangguichun/custom-element-theme/blob/master/gulpfile.js#L6)修改，生成的文件在dist目录的主题目录下，可以通过 -n指定主题名称，比如 gulp -n day-theme，则会在dist目录下生成day-theme目录，如果不指定-n参数，则使用custom-theme，生成的文件也放在dist/custom-theme目录下
+  - gulp -n day-theme
 - 重复以上步骤，生成多套主题，比如`.day-theme`, `.night-theme` 两套
 
 ```shell
 et -i
 node update-element-theme-variable.js
 et
-gulp
+gulp -n day-theme
 ```
 
 ### 在项目中使用多套主题

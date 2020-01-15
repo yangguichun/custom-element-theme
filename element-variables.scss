@@ -16,11 +16,11 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #EB834F !default;
+$--color-primary: #409EFF !default;
 /// color|1|Background Color|4
-$--color-white: #415CD6 !default;
+$--color-white: #FFFFFF !default;
 /// color|1|Background Color|4
-$--color-black: #EFEFE9 !default;
+$--color-black: #000000 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -49,15 +49,15 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 /// color|1|Font Color|2
-$--color-text-primary: #F7F7F8 !default;
+$--color-text-primary: #303133 !default;
 /// color|1|Font Color|2
-$--color-text-regular: #FCFCFC !default;
+$--color-text-regular: #606266 !default;
 /// color|1|Font Color|2
-$--color-text-secondary: #CCD0D9 !default;
+$--color-text-secondary: #909399 !default;
 /// color|1|Font Color|2
 $--color-text-placeholder: #C0C4CC !default;
 /// color|1|Border Color|3
-$--border-color-base: #3C6AD6 !default;
+$--border-color-base: #DCDFE6 !default;
 /// color|1|Border Color|3
 $--border-color-light: #E4E7ED !default;
 /// color|1|Border Color|3

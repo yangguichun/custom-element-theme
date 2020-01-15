@@ -2,5 +2,6 @@ node_modules
 .DS_Store
 npm-debug*
 theme
+dist
 .idea
 package-lock.json
