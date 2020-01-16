@@ -24,10 +24,10 @@ npm install
 ```shell
 gulp -n day-theme
 ```
-生成的样式文件在`/dist/day-theme`目录下
+生成的样式文件默认在`/dist`目录下，也可以通过`./lib/config.js`文件的`dest`参数修改输出路径
+> 注：在windows下，需要把路径中的`\`改为`/`
 
-
-> 重复以上两个步骤，生成多套主题，比如`.day-theme`, `.night-theme` 两套
+*重复以上两个步骤，生成多套主题，比如`.day-theme`, `.night-theme` 两套*
 
 ### 在项目中使用多套主题
 假设在[vue-element-admin](https://github.com/yangguichun/vue-element-admin)中使用
