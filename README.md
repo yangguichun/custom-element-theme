@@ -20,26 +20,33 @@ npm install
 - 在[这里](https://element.eleme.cn/#/zh-CN/theme)在线编辑element主题
 - 下载，并将下载的文件中的`config.json`文件拷贝到当前项目根目录下
 
-### 基于config.json，编译出多套主题
-- 初始化，从node-modules/element-theme-chalk内拷贝`var.scss`文件到当前目录，得到`element-variables.scss`文件
-- **将config.json文件的内容更新到`element-variables.scss`文件内**  
-  - **node update-element-theme-variable.js**
-- 编译主题，生成的文件在theme目录下
-- 给css添加一个名字空间，默认是`custom-theme`，可以通过[这个变量](https://github.com/yangguichun/custom-element-theme/blob/master/gulpfile.js#L6)修改，生成的文件在dist目录的主题目录下，可以通过 -n指定主题名称，比如 gulp -n day-theme，则会在dist目录下生成day-theme目录，如果不指定-n参数，则使用custom-theme，生成的文件也放在dist/custom-theme目录下  
-- 以上工作，通过命令完成： gulp -n day-theme
-- 重复执行该命令，生成多套主题，比如`.day-theme`, `.night-theme` 两套
-
+### 基于config.json，编译样式文件
 ```shell
 gulp -n day-theme
 ```
+生成的样式文件在`/dist/day-theme`目录下
+
+
+> 重复以上两个步骤，生成多套主题，比如`.day-theme`, `.night-theme` 两套
 
 ### 在项目中使用多套主题
 假设在[vue-element-admin](https://github.com/yangguichun/vue-element-admin)中使用
 - 将生成在dist目录下的多套主题拷贝到 /src/assets 目录下，多套主题则分多个子目录存放，比如`day-theme`, `night-theme`
 - 然后通过`toggleClass(document.body, 'day-theme')`来切换主题，具体参考[这里](https://github.com/yangguichun/vue-element-admin/blob/master/src/views/theme/index.vue#L97)
 
+## 如何修改主题
+生成主题之后，后续可能需要对做局部修改，此时不可能从新设置所有的颜色，此时就需要复用之前的config.json文件，所以在上面生成主题文件之后，要把主题文件夹下的config.json文件一起备份了，后续如果要更新，值需要在[主题编辑工具](https://element.eleme.cn/#/zh-CN/theme)页面上传该json文件，编辑好之后再下载，然后重新编译即可。
 
-## 如果element-theme-chalk有版本更新，通过如下方式更新主题
+## 对于gulp命令的说明
+执行gulp -n day-theme，主要完成了以下几件事情：
+- 初始化，从node-modules/element-theme-chalk内拷贝`var.scss`文件到当前目录，得到`element-variables.scss`文件
+- **将config.json文件的内容更新到`element-variables.scss`文件内**  
+  - **node update-element-theme-variable.js**
+- 编译主题，生成的文件在theme目录下
+- 给css添加一个名字空间，默认是`custom-theme`，可以通过[这个变量](https://github.com/yangguichun/custom-element-theme/blob/master/gulpfile.js#L6)修改，生成的文件在dist目录的主题目录下，可以通过 -n指定主题名称，比如 gulp -n day-theme，则会在dist目录下生成day-theme目录，如果不指定-n参数，则使用custom-theme，生成的文件也放在dist/custom-theme目录下  
+
+
+## 如何element-theme-chalk到最新版本
 ### 查看是否有更新
 - 查看本地的element-theme-chalk版本
   - npm list element-theme-chalk
